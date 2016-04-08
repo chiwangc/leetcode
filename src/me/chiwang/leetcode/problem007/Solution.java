@@ -1,6 +1,6 @@
 /***********************************************************************************************************************
  * 
- * LeetCode Problem 5. Longest Palindromic Substring
+ * LeetCode Problem 7. Reverse Integer
  * 
  * Problem:
  * Reverse digits of an integer.
