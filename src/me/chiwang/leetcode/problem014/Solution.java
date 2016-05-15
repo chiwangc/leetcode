@@ -1,3 +1,12 @@
+/***********************************************************************************************************************
+ * 
+ * LeetCode Problem 14. Longest Common Prefix
+ * 
+ * Problem:
+ * Write a function to find the longest common prefix string amongst an array of strings. 
+ * 
+ ***********************************************************************************************************************/
+
 package me.chiwang.leetcode.problem014;
 
 public class Solution {

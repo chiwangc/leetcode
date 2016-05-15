@@ -1,3 +1,12 @@
+/***********************************************************************************************************************
+ * 
+ * LeetCode Problem 23. Merge k Sorted Lists 
+ * 
+ * Problem:
+ * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity. 
+ * 
+ ***********************************************************************************************************************/
+
 package me.chiwang.leetcode.problem023;
 
 public class Solution {
