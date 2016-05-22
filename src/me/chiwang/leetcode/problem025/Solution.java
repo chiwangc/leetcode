@@ -26,55 +26,56 @@ package me.chiwang.leetcode.problem025;
 import me.chiwang.leetcode.ListNode;
 
 public class Solution {
-	
-	public ListNode reverseKGroup(ListNode head, int k) {
-		ListNode start = new ListNode(0);
-		start.next = head;
-		
-		ListNode nextGroup = reverseNextKNodes(start, k);
-		while (nextGroup != null) {
-			nextGroup = reverseNextKNodes(nextGroup, k);
-		}
-		
-		return start.next;
-	}
-	
-	private ListNode skipKElements(ListNode start, int k) {
-		ListNode curr = start;
-		int count = 0;
-		
-		while (curr != null) {
-			curr = curr.next;
-			if (++count == k)
-				break;
-		}
-		
-		return curr;
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+	ListNode start = new ListNode(0);
+	start.next = head;
+
+	ListNode nextGroup = reverseNextKNodes(start, k);
+	while (nextGroup != null) {
+	    nextGroup = reverseNextKNodes(nextGroup, k);
 	}
 
-	private ListNode reverseNextKNodes(ListNode start, int k) {
-		
-		ListNode end = skipKElements(start, k);
-		if (end == null) return null;
-		final ListNode endNext = end.next;
-		
-		ListNode curr = start.next;
-		ListNode next = curr.next;
-		ListNode nextNext = null;
-		
-		for (int i = 0; i < k - 1; i++) {
-			if (next != null)
-				nextNext = next.next;
-			
-			next.next = curr;
-			
-			curr = next;
-			next = nextNext;
-		}
-		
-		ListNode result = start.next;
-		result.next = endNext;
-		start.next = end;
-		return result;
+	return start.next;
+    }
+
+    private ListNode skipKElements(ListNode start, int k) {
+	ListNode curr = start;
+	int count = 0;
+
+	while (curr != null) {
+	    curr = curr.next;
+	    if (++count == k)
+		break;
 	}
+
+	return curr;
+    }
+
+    private ListNode reverseNextKNodes(ListNode start, int k) {
+
+	ListNode end = skipKElements(start, k);
+	if (end == null)
+	    return null;
+	final ListNode endNext = end.next;
+
+	ListNode curr = start.next;
+	ListNode next = curr.next;
+	ListNode nextNext = null;
+
+	for (int i = 0; i < k - 1; i++) {
+	    if (next != null)
+		nextNext = next.next;
+
+	    next.next = curr;
+
+	    curr = next;
+	    next = nextNext;
+	}
+
+	ListNode result = start.next;
+	result.next = endNext;
+	start.next = end;
+	return result;
+    }
 }
